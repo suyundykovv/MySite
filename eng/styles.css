@@ -1,0 +1,14 @@
+/* General */
+body {
+    background-color: #ffffff;
+    transition: background-color 0.5s ease;
+}
+#main-header {
+    background-color: #c4001d;
+}
+.nav-list {
+    list-style-type: none; 
+  }
+#main-footer {
+    background-color: #c4001d;
+}
