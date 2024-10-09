@@ -1,4 +1,3 @@
-// JavaScript Functions
 function showPopup() {
     const popup = document.createElement('div');
     popup.style.position = 'fixed';
