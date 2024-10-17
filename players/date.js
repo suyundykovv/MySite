@@ -1,6 +1,5 @@
 function updateDateTime() {
     const dateTimeElement = document.getElementById('date-time');
-
     const now = new Date();
     const options = { 
       year: 'numeric', 
@@ -12,7 +11,6 @@ function updateDateTime() {
       hour12: true 
     };
     const formattedDateTime = now.toLocaleString('en-US', options);
-    
     dateTimeElement.textContent = `Current Date and Time: ${formattedDateTime}`;
   }
   updateDateTime();

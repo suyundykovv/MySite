@@ -1,18 +1,35 @@
-const changeColorBtn = document.getElementById('changeColorBtn');
+document.addEventListener('DOMContentLoaded', function() {
+  const themeToggle = document.getElementById('themeToggle');
+  const toggleBall = document.getElementById('toggleBall');
+  const body = document.body;
+  const cards = document.querySelectorAll('.card'); // Select all cards
 
-const colors = ['black', 'red', 'white'];
-let currentColorIndex = 0;
+  let isNight = false; // Track the theme state
 
-changeColorBtn.addEventListener('click', () => {
-  document.body.style.backgroundColor = colors[currentColorIndex];
+  themeToggle.addEventListener('click', function() {
+    isNight = !isNight;
 
-  if (colors[currentColorIndex] === 'black') {
-    document.body.style.color = 'red';
-  } else if (colors[currentColorIndex] === 'red') {
-    document.body.style.color = 'black';
-  } else if (colors[currentColorIndex] === 'white') {
-    document.body.style.color = 'black';
-  }
-  
-  currentColorIndex = (currentColorIndex + 1) % colors.length;
+    // Toggle ball position
+    if (isNight) {
+      toggleBall.style.left = '32px'; // Move ball to the right
+      themeToggle.classList.remove('btn-light');
+      themeToggle.classList.add('btn-dark');
+      body.classList.add('night-theme'); // Add night theme class to body
+      
+      // Make cards dark
+      cards.forEach(card => {
+        card.classList.add('bg-dark', 'text-white');
+      });
+    } else {
+      toggleBall.style.left = '2px'; // Move ball to the left
+      themeToggle.classList.remove('btn-dark');
+      themeToggle.classList.add('btn-light');
+      body.classList.remove('night-theme');
+      
+      // Revert cards to their original state
+      cards.forEach(card => {
+        card.classList.remove('bg-dark', 'text-white');
+      });
+    }
+  });
 });

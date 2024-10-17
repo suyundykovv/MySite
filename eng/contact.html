@@ -14,7 +14,7 @@
       <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand text-white" href="#">
           <div class="d-flex align-items-center">
-            <h1 class="h3 mr-3">FC Arsenal</h1>
+            <h1 class="h3 mr-3" data-translate="header.title">FC Arsenal</h1>
             <img src="../images/gun2.png" class="nav-logo-img img-fluid" alt="FC Arsenal Logo" style="width: 40%; height: auto;">
           </div>
         </a>
@@ -23,20 +23,19 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="highlights.html">Highlights</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="news.html">News</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="history.html">History</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="players.html">Players</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="tables.html">Tables</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="stadium.html">Stadium</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="contact.html">Contact</a></li>
+            <li class="nav-item"><a class="nav-link text-white" data-translate="nav.home" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link text-white" data-translate="nav.highlights" href="highlights.html">Highlights</a></li>
+            <li class="nav-item"><a class="nav-link text-white" data-translate="nav.news" href="news.html">News</a></li>
+            <li class="nav-item"><a class="nav-link text-white" data-translate="nav.history" href="history.html">History</a></li>
+            <li class="nav-item"><a class="nav-link text-white" data-translate="nav.players" href="players.html">Players</a></li>
+            <li class="nav-item"><a class="nav-link text-white" data-translate="nav.tables" href="tables.html">Tables</a></li>
+            <li class="nav-item"><a class="nav-link text-white" data-translate="nav.stadium" href="stadium.html">Stadium</a></li>
+            <li class="nav-item"><a class="nav-link text-white" data-translate="nav.contact" href="contact.html">Contact</a></li>
           </ul>
         </div>
       </nav>
     </div>
   </header>
-
   <main class="container my-4" id="content-area">
     <section class="contact-section">
       <h2>Contact Us</h2>
@@ -50,25 +49,54 @@
         <p><strong>Email:</strong> <a href="mailto:info@arsenal.co.uk">info@arsenal.co.uk</a></p>
       </address>
 
-      <h3>Contact Form</h3>
-      <form id="contactForm" class="contact-form">
-        <div class="form-group">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" class="form-control" required>
-          <small class="error-message text-danger" id="nameError"></small>
-        </div>
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" class="form-control" required>
-          <small class="error-message text-danger" id="emailError"></small>
-        </div>
-        <div class="form-group">
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" rows="5" class="form-control" required></textarea>
-          <small class="error-message text-danger" id="messageError"></small>
-        </div>
-        <button type="submit" class="btn btn-secondary">Send</button>
-      </form>
+      <div class="container mt-5">
+        <h2>Multi-Step Form</h2>
+        <form id="multiStepForm">
+          <!-- Step 1 -->
+          <div class="step active" id="step1">
+            <h4>Step 1: Personal Information</h4>
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            <button type="button" class="btn btn-primary" id="next1">Next</button>
+          </div>
+    
+          <!-- Step 2 -->
+          <div class="step" id="step2">
+            <h4>Step 2: Address Information</h4>
+            <div class="form-group">
+              <label for="address">Address:</label>
+              <input type="text" id="address" name="address" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="city">City:</label>
+              <input type="text" id="city" name="city" class="form-control" required>
+            </div>
+            <button type="button" class="btn btn-secondary" id="back1">Back</button>
+            <button type="button" class="btn btn-primary" id="next2">Next</button>
+          </div>
+    
+          <!-- Step 3 -->
+          <div class="step" id="step3">
+            <h4>Step 3: Confirmation</h4>
+            <p>Please review your information:</p>
+            <ul>
+              <li><strong>Name:</strong> <span id="confirmName"></span></li>
+              <li><strong>Email:</strong> <span id="confirmEmail"></span></li>
+              <li><strong>Address:</strong> <span id="confirmAddress"></span></li>
+              <li><strong>City:</strong> <span id="confirmCity"></span></li>
+            </ul>
+            <button type="button" class="btn btn-secondary" id="back2">Back</button>
+            <button type="submit" id="playSoundButton" class="btn btn-success">Submit</button>
+            <audio id="notificationSound" src="clicksound.mp3" preload="auto"></audio>
+          </div>
+        </form>
+      </div>
     </section>
   </main>
 
@@ -77,21 +105,22 @@
         <div class="row justify-content-center align-items-center">
             <div class="col-auto">
                 <p class="lead mb-0">Created by <strong>Suyundykov Margulan</strong></p>
+                <button id="timeButton" class="btn-danger">Current Time</button>
                 <p id="date-time" class="mb-0"></p>
             </div>
             <div class="col-auto">
-                <div class="language-switcher d-inline-block">
-                    <label for="language-select" class="mr-2">Language:</label>
-                    <select id="language-select" name="language" class="custom-select custom-select-sm d-inline-block" onchange="window.location.href=this.value;">
-                        <option value="index.html" selected>English</option>
-                        <option value="../kaz/index_kk.html">Kazakh</option>
-                        <option value="../rus/index_ru.html">Russian</option>
-                    </select>
-                </div>
-            </div>
+              <label for="language-select" class="mr-2">Language:</label>
+              <select id="language-select" class="custom-select custom-select-sm d-inline-block">
+                  <option value="en" selected>English</option>
+                  <option value="kk">Kazakh</option>
+                  <option value="ru">Russian</option>
+              </select>
+          </div>
 
-            <div class="col-auto">
-                <button id="changeColorBtn" class="btn btn-danger btn-sm">Change Background Color</button>
+            <div class="d-flex justify-content-center my-4">
+              <div id="themeToggle" class="btn btn-light position-relative p-2" style="width: 60px; height: 30px; border-radius: 30px;">
+                <div id="toggleBall" class="bg-dark position-absolute" style="width: 26px; height: 26px; border-radius: 50%; left: 2px; top: 2px;"></div>
+              </div>
             </div>
         </div>
         <div class="row justify-content-center mt-3">
@@ -113,12 +142,17 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="script.js">
-    
-  </script>
+  <script src="script.js"></script>
   <script src="date.js"></script>
-  <script src="popup.js"></script>
+  <script src="popup.js"></script>c
+  <script src="keyboardNavigation.js"></script>
+  <script src="index_translations.js"></script>
+  <script src="language.js"></script>
   <script src="validate.js"></script>
+  <script src="multistep.js"></script>
+  <script src="sound.js"></script>
+
+
 
 
 </body>

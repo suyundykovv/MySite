@@ -6,9 +6,9 @@ function toggleAccordion(collapseId) {
     allContents.forEach((el) => {
         el.style.display = 'none';
     });
-    if (isCollapsed) {
-        content.style.display = 'block';
-    }
+    // if (isCollapsed) {
+    //     content.style.display = 'block';
+    // }
 }
 
 document.addEventListener('DOMContentLoaded', () => {

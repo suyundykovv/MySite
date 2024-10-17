@@ -12,3 +12,40 @@ body {
 #main-footer {
     background-color: #c4001d;
 }
+.night-theme {
+    background-color: #333; /* Dark background */
+    color: #fff;           /* White text */
+  }
+  
+  /* .night-theme .navbar, .night-theme .footer {
+    background-color: #222;
+    color: white;
+  } */
+  
+  .night-theme a {
+    color: #ddd;
+  }
+  
+  .night-theme a:hover {
+    color: #fff;
+  }
+  
+  /* Change the toggle button background in night mode */
+  #themeToggle.btn-dark {
+    background-color: black;
+  }
+  .star {
+    cursor: pointer;
+    font-size: 24px;
+    color: gray;
+}
+
+.star.selected {
+    color: gold;
+}
+.step {
+  display: none;
+}
+.step.active {
+  display: block;
+}
