@@ -30,6 +30,9 @@ const translations = {
       'gabrielGoalDescription': "Gabriel scored a goal against Tottenham.",
       'createdBy': "Created by <strong>Suyundykov Margulan</strong>",
       'languageLabel': "Language:",
+      'navLogout': "Logout:",
+
+
     },
     ru: {
       'header.title': 'ФК Арсенал',
@@ -62,6 +65,8 @@ const translations = {
       'gabrielGoalDescription': "Габриэль Тоттенхэмге гол соқты.",
       'createdBy': "Жасаған<strong>Сүйіндіков Марғұлан</strong>",
       'languageLabel': "Тіл:",
+      'navLogout': "Шыгу:",
+
     },
     kk: {
       'header.title': 'ФК Арсенал',
@@ -94,6 +99,20 @@ const translations = {
       'gabrielGoalDescription': "Габриэль забил гол в ворота Tottenham.",
       'createdBy': "Создано <strong>Суюндыковым Маргуланом</strong>",
       'languageLabel': "Язык:",
+      'navLogout': "Выход:",
+
+    },
+    fr:{
+'header.title' : 'Arsenal FC',
+ 'nav.home' : 'Accueil',
+ 'nav.highlights' : 'Points forts',
+ 'nav.news' : 'Actualités',
+ 'nav.history' : 'Historique',
+ 'nav.players' : 'Joueurs',
+ 'nav.tables' : 'Tableaux',
+ 'nav.stadium' : 'Stade',
+ 'nav.contact' : 'Contact',
     }
+
   };
   

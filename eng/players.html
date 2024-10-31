@@ -41,15 +41,20 @@
 
     <section class="squad-section mb-4">
       <h2>Current Squad</h2>
-      <ul id="player-list">
-        <!-- Player list will be inserted here dynamically -->
-      </ul>
-      <p>Here is the current lineup for the FC Arsenal squad:</p>
-
-      <!-- Goalkeepers -->
-      <!-- Goalkeepers -->
-<h3>Goalkeepers</h3>
-<div class="row">
+      <div class="form-group">
+        <label for="player-type-filter">Filter by Position:</label>
+        <select id="player-type-filter" class="form-control" onchange="filterPlayers()">
+          <option value="all">All</option>
+          <option value="attacker">Attacker</option>
+          <option value="midfielder">Midfielder</option>
+          <option value="defender">Defender</option>
+          <option value="goalkeeper">Goalkeeper</option>
+        </select>
+      </div>
+<div class="section-title" data-type="goalkeeper">
+  <h3>Goalkeepers</h3>
+</div>
+<div class="row player-list" data-type="goalkeeper">
   <div class="col-md-4 mb-4">
     <div class="card">
       <a href="../players/raya.html">
@@ -61,7 +66,7 @@
       </div>
     </div>
   </div>
-  <div class="col-md-4 mb-4">
+  <div class="col-md-4 mb-4" data-type="goalkeeper">
     <div class="card">
       <a href="../players/neto.html">
         <img src="../images/Neto.webp" alt="Neto" class="card-img-top player-img img-fluid">
@@ -75,8 +80,10 @@
 </div>
 
 <!-- Defenders -->
-<h3>Defenders</h3>
-<div class="row">
+<div class="section-title" data-type="defender">
+  <h3>Defenders</h3>
+</div>
+<div class="row player-list" data-type="defender">
   <div class="col-md-4 mb-4">
     <div class="card">
       <a href="../players/saliba.html">
@@ -88,7 +95,7 @@
       </div>
     </div>
   </div>
-  <div class="col-md-4 mb-4">
+  <div class="col-md-4 mb-4" data-type="defender">
     <div class="card">
       <a href="../players/gabriel.html">
         <img src="../images/Gabriel.webp" alt="Gabriel Magalhães" class="card-img-top player-img img-fluid">
@@ -99,7 +106,7 @@
       </div>
     </div>
   </div>
-  <div class="col-md-4 mb-4">
+  <div class="col-md-4 mb-4" data-type="defender">
     <div class="card">
       <a href="../players/calafiori.html">
         <img src="../images/Calafiori.webp" alt="Riccardo Calafiori" class="card-img-top player-img img-fluid">
@@ -110,7 +117,7 @@
       </div>
     </div>
   </div>
-  <div class="col-md-4 mb-4">
+  <div class="col-md-4 mb-4" data-type="defender">
     <div class="card">
       <a href="../players/timber.html">
         <img src="../images/Timber.webp" alt="Jurrien Timber" class="card-img-top player-img img-fluid">
@@ -121,7 +128,7 @@
       </div>
     </div>
   </div>
-  <div class="col-md-4 mb-4">
+  <div class="col-md-4 mb-4" data-type="defender">
     <div class="card">
       <a href="../players/kiwior.html">
         <img src="../images/Kiwior.webp" alt="Jakub Kiwior" class="card-img-top player-img img-fluid">
@@ -132,7 +139,7 @@
       </div>
     </div>
   </div>
-  <div class="col-md-4 mb-4">
+  <div class="col-md-4 mb-4" data-type="defender">
     <div class="card">
       <a href="../players/zinchenko.html">
         <img src="../images/Zinchenko.webp" alt="Oleksandr Zinchenko" class="card-img-top player-img img-fluid">
@@ -146,8 +153,10 @@
 </div>
 
 <!-- Midfielders -->
-<h3>Midfielders</h3>
-<div class="row">
+<div class="section-title" data-type="midfielder">
+  <h3>Midfielders</h3>
+</div>
+<div class="row player-list" data-type="midfielder">
   <div class="col-md-4 mb-4">
     <div class="card">
       <a href="../players/rice.html">
@@ -159,7 +168,7 @@
       </div>
     </div>
   </div>
-  <div class="col-md-4 mb-4">
+  <div class="col-md-4 mb-4"  data-type="midfielder">
     <div class="card">
       <a href="../players/partey.html">
         <img src="../images/Partey.webp" alt="Thomas Partey" class="card-img-top player-img img-fluid">
@@ -170,7 +179,7 @@
       </div>
     </div>
   </div>
-  <div class="col-md-4 mb-4">
+  <div class="col-md-4 mb-4" data-type="midfielder">
     <div class="card">
       <a href="../players/jorginho.html">
         <img src="../images/Jorginho.webp" alt="Jorginho" class="card-img-top player-img img-fluid">
@@ -181,7 +190,7 @@
       </div>
     </div>
   </div>
-  <div class="col-md-4 mb-4">
+  <div class="col-md-4 mb-4" data-type="midfielder">
     <div class="card">
       <a href="../players/merino.html">
         <img src="../images/Merino.webp" alt="Mikel Merino" class="card-img-top player-img img-fluid">
@@ -192,7 +201,7 @@
       </div>
     </div>
   </div>
-  <div class="col-md-4 mb-4">
+  <div class="col-md-4 mb-4" data-type="midfielder">
     <div class="card">
       <a href="../players/odegaard.html">
         <img src="../images/Odegaard.webp" alt="Martin Ødegaard" class="card-img-top player-img img-fluid">
@@ -206,20 +215,23 @@
 </div>
 
 <!-- Attackers -->
-<h3>Attackers</h3>
-<div class="row">
-  <div class="col-md-4 mb-4">
-    <div class="card">
-      <a href="../players/saka.html">
-        <img src="../images/Saka.webp" alt="Bukayo Saka" class="card-img-top player-img img-fluid">
-      </a>
-      <div class="card-body">
-        <h5 class="card-title">Bukayo Saka</h5>
-        <p class="card-text">Forward</p>
+<div class="section-title" data-type="attacker">
+  <h3>Attackers</h3>
+</div>
+<div class="row" id="player-list" data-type="attacker">
+  <div class="row player-list" data-type="attacker">
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <a href="../players/saka.html">
+          <img src="../images/Saka.webp" alt="Bukayo Saka" class="card-img-top player-img img-fluid">
+        </a>
+        <div class="card-body">
+          <h5 class="card-title">Bukayo Saka</h5>
+          <p class="card-text">Forward</p>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="col-md-4 mb-4">
+  <div class="col-md-4 mb-4" data-type="attacker">
     <div class="card">
       <a href="../players/trossard.html">
         <img src="../images/Trossard.webp" alt="Leandro Trossard" class="card-img-top player-img img-fluid">
@@ -230,7 +242,7 @@
       </div>
     </div>
   </div>
-  <div class="col-md-4 mb-4">
+  <div class="col-md-4 mb-4" data-type="attacker">
     <div class="card">
       <a href="../players/jesus.html">
         <img src="../images/Jesus.webp" alt="Gabriel Jesus" class="card-img-top player-img img-fluid">
@@ -241,7 +253,7 @@
       </div>
     </div>
   </div>
-  <div class="col-md-4 mb-4">
+  <div class="col-md-4 mb-4" data-type="attacker">
     <div class="card">
       <a href="../players/martinelli.html">
         <img src="../images/Martinelli.webp" alt="Gabriel Martinelli" class="card-img-top player-img img-fluid">
@@ -252,7 +264,7 @@
       </div>
     </div>
   </div>
-  <div class="col-md-4 mb-4">
+  <div class="col-md-4 mb-4" data-type="attacker">
     <div class="card">
       <a href="../players/havertz.html">
         <img src="../images/Havertz.webp" alt="Kai Havertz" class="card-img-top player-img img-fluid">
@@ -315,6 +327,9 @@
   <script src="index_translations.js"></script>
   <script src="language.js"></script>
   <script src="array.js"></script>
+  <script src="playerfilter.js"></script>
+  <script src="saving.js"></script>
+
 
 
 </body>
