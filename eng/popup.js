@@ -36,7 +36,6 @@ function closePopup() {
     document.getElementById("popupForm").style.display = "none";
 }
 
-// Close the popup when clicking outside of the popup content
 window.onclick = function(event) {
     const popup = document.getElementById("popupForm");
     if (event.target === popup) {

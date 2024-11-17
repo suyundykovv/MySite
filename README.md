@@ -19,13 +19,10 @@ To run this project locally, follow these steps:
 
 Clone the Repository:
 
-bash
-Copy code
 git clone https://github.com/yourusername/arsenal-fan-page.git
 Navigate to the Project Directory:
 
-bash
-Copy code
+
 cd arsenal-fan-page
 Open the Index File: Open index.html in your preferred web browser.
 

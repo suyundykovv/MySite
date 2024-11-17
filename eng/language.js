@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const languageSelect = document.getElementById('language-select');
     
-    // Load saved language or default to English
     const savedLanguage = localStorage.getItem('language') || 'en';
     setLanguage(savedLanguage);
   

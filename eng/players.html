@@ -31,6 +31,7 @@
             <li class="nav-item"><a class="nav-link text-white" data-translate="nav.tables" href="tables.html">Tables</a></li>
             <li class="nav-item"><a class="nav-link text-white" data-translate="nav.stadium" href="stadium.html">Stadium</a></li>
             <li class="nav-item"><a class="nav-link text-white" data-translate="nav.contact" href="contact.html">Contact</a></li>
+            <li class="nav-item"><a class="nav-link text-white" data-translate="navLogout" href="open.html">Logout</a></li>
           </ul>
         </div>
       </nav>
@@ -38,7 +39,6 @@
   </header>
 
   <main class="container my-4" id="content-area">
-
     <section class="squad-section mb-4">
       <h2>Current Squad</h2>
       <div class="form-group">
@@ -276,18 +276,41 @@
     </div>
       </div>
     </section>
+    <div class="container mt-5">
+      <h2 class="text-center mb-4">Arsenal Club Player Query</h2>
+      <div class="card shadow p-4">
+        <h4 class="card-title mb-4">Player Information</h4>
+        <form>
+          <div class="mb-3">
+            <label for="responseFormat" class="form-label">Response Format:</label>
+            <select id="responseFormat" class="form-select">
+              <option value="json">JSON</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="limitInput" class="form-label">Limit:</label>
+            <input type="number" id="limitInput" class="form-control" placeholder="Enter limit (1-100)" min="1" max="100">
+          </div>
+          <div class="mb-3">
+            <label for="offsetInput" class="form-label">Offset:</label>
+            <input type="number" id="offsetInput" class="form-control" placeholder="Enter offset" min="0">
+          </div>
+          <button type="button" id="fetchDrivers" class="btn btn-danger w-100">Get Players</button>
+        </form>
+        <div id="driversOutput" class="mt-4"></div>
+      </div>
+    </div>
   </main>
-
   <footer id="main-footer" class="text-white text-center p-3">
     <div class="container">
         <div class="row justify-content-center align-items-center">
             <div class="col-auto">
-                <p class="lead mb-0">Created by <strong>Suyundykov Margulan</strong></p>
-                <button id="timeButton" class="btn-danger">Current Time</button>
+                <p class="lead mb-0" data-translate="footer.createdBy">Created by <strong>Suyundykov Margulan</strong></p>
+                <button id="timeButton" class="btn-danger" data-translate="footer.currentTime">Current Time</button>
                 <p id="date-time" class="mb-0"></p>
             </div>
             <div class="col-auto">
-              <label for="language-select" class="mr-2">Language:</label>
+              <label for="language-select" class="mr-2" data-translate="footer.language">Language:</label>
               <select id="language-select" class="custom-select custom-select-sm d-inline-block">
                   <option value="en" selected>English</option>
                   <option value="kk">Kazakh</option>
@@ -303,19 +326,20 @@
         </div>
         <div class="row justify-content-center mt-3">
             <div class="col-auto">
-                <h5>Follow Us</h5>
+                <h5 data-translate="footer.followUs">Follow Us</h5>
                 <a href="#" class="text-white mr-3"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" class="text-white mr-3"><i class="fab fa-twitter"></i></a>
                 <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
             </div>
 
             <div class="col-auto">
-              <button id="contactUsBtn"  class="btn btn-danger btn-sm" onclick="showPopup()">Contact Us</button >
-                <p>Email: <a href="mailto:info@fcarsenal.com" class="text-white">info@fcarsenal.com</a></p>
+              <button id="contactUsBtn" class="btn btn-danger btn-sm" onclick="showPopup()" data-translate="footer.contactUs">Contact Us</button>
+              <p data-translate="footer.email">Email: <a href="mailto:info@fcarsenal.com" class="text-white">info@fcarsenal.com</a></p>
             </div>
         </div>
     </div>
 </footer>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
@@ -329,6 +353,8 @@
   <script src="array.js"></script>
   <script src="playerfilter.js"></script>
   <script src="saving.js"></script>
+  <script src="post.js"></script>
+
 
 
 
